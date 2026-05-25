@@ -1,0 +1,125 @@
+/* header */
+.header {
+    display: flex;
+    border: none;
+    background-color: black;
+    /* ប្រើសម្រាប់ដាក់គម្លាត់អក្សចេញពីរគ្នា */
+    justify-content: space-between;
+
+}
+
+.header .card {
+    /* ប្រើសម្រាប់ដោះប្រអប់ចេញ */
+    border: none;
+    background-color: black;
+    color: white;
+    display: flex;
+
+}
+
+.header .card h3 {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.header .card h3 i {
+    /* ប្រើសម្រាប់រំកិលអក្សចេញខាងក្នុង */
+    padding: 5px;
+}
+
+
+.container{
+    background-color: white;
+    /* ប្រើសម្រាប់រំកិលអក្សរទៅខាងស្ដាំ */
+    display: flex;
+    /* ប្រើសម្រាប់រំកិល ojectទាំងមកកណ្ដាល */
+    align-items: center;
+    /* ប្រើសម្រាប់ដាក់គម្លាត់logoនិងអក្សរអោយឆ្ងាយពីរគ្នា */
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0px 0px 8px 0px black;
+}
+/* meun */
+.menu{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 10px;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu li a:hover{
+    background-color: orange;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.menu li a i{
+    margin-right: 8px;
+    font-size: 15px;
+    color: gray;
+}
+/* banner */
+.banner img{
+    width: 88%;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+.logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.menu-icon{
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+} 
+/* screen responsive fir moble */
+@media screen and (max-width: 768px) {
+    .menu{
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;   
+        width: 94%;
+        background-color: white;
+        flex-direction: column;
+        z-index: 1;
+        padding: 2px
+    }
+    .menu-icon{
+       display: block;
+    }
+    .menu.active{
+        display: flex;
+    }
+}
+.category{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.category .card{
+    width: 200px;
+    height: 200px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px black;
+    display: flex;
+    
+}
+.category .cart{
+    width: 200px;
+    height: 200px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px black;
+    display: flex;
+   
+}
+.category.card

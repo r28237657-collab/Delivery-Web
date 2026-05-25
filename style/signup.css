@@ -1,0 +1,75 @@
+
+.body{
+    background-color: #978f8fb4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    color: rgb(0, 89, 255);
+    font-size: 50px;
+}
+.contianer{
+    width: 30%;
+    background-color: white;
+    margin-left: 35%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+h2{
+    text-align: center;
+    color: rgba(1, 5, 14, 0.841);
+}
+h3{
+    text-align: center;
+    color: rgb(98, 101, 108);
+    font-size: 15px;
+}
+h4{
+    color: rgb(98, 101, 108);
+    font-size: 15px;
+} 
+p{
+    font-size: 15px;
+   color: rgb(98, 101, 108);
+    text-align: center;
+}
+.button{
+   background-color: green;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   text-align: center;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 5px;
+}
+input{
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label{
+    margin-right: 10px;
+   
+}
+select{
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.gender{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 10px;
+}
+p a{
+    color: rgb(0, 89, 255);
+    text-decoration: none;
+}

@@ -1,0 +1,157 @@
+/* ==============================
+   GRABFOOD CLONE (FULL STACK)
+   Node.js + Express + MongoDB + HTML/CSS/JS
+   ============================== */
+
+/* ==============================
+   1. BACKEND - server.js
+   ============================== */
+
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect("mongodb://localhost:27017/grabfood_clone");
+
+// USER MODEL
+const User = mongoose.model("User", new mongoose.Schema({
+  username: String,
+  password: String,
+  role: { type: String, default: "user" }
+}));
+
+// RESTAURANT MODEL
+const Restaurant = mongoose.model("Restaurant", new mongoose.Schema({
+  name: String,
+  image: String,
+  menu: Array
+}));
+
+// ORDER MODEL
+const Order = mongoose.model("Order", new mongoose.Schema({
+  userId: String,
+  items: Array,
+  total: Number,
+  address: String,
+  status: { type: String, default: "preparing" }
+}));
+
+// AUTH
+app.post("/register", async (req, res) => {
+  const hash = await bcrypt.hash(req.body.password, 10);
+  const user = await User.create({ username: req.body.username, password: hash });
+  res.json(user);
+});
+
+app.post("/login", async (req, res) => {
+  const user = await User.findOne({ username: req.body.username });
+  if (!user) return res.send("User not found");
+
+  const ok = await bcrypt.compare(req.body.password, user.password);
+  if (!ok) return res.send("Wrong password");
+
+  const token = jwt.sign({ id: user._id }, "SECRET");
+  res.json({ token, user });
+});
+
+// RESTAURANTS
+app.get("/restaurants", async (req, res) => {
+  res.json(await Restaurant.find());
+});
+
+// ORDER
+app.post("/order", async (req, res) => {
+  const order = await Order.create(req.body);
+  res.json(order);
+});
+
+app.listen(5000, () => console.log("Server running on 5000"));
+
+
+/* ==============================
+   2. FRONTEND - index.html (GrabFood UI)
+   ============================== */
+
+/*
+<!DOCTYPE html>
+<html>
+<head>
+<title>GrabFood Clone</title>
+<style>
+body { margin:0; font-family:Arial; background:#0b0b0b; color:white; }
+header { background:#ff2b55; padding:15px; font-size:20px; font-weight:bold; }
+.container { padding:20px; }
+.card { background:#1a1a1a; padding:15px; margin:10px 0; border-radius:12px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+button { background:#ff2b55; border:none; color:white; padding:10px; border-radius:8px; cursor:pointer; }
+input { width:100%; padding:10px; margin-top:5px; border-radius:8px; border:none; }
+.map { height:200px; background:#222; position:relative; border-radius:12px; }
+.rider { width:15px; height:15px; background:#00ff88; border-radius:50%; position:absolute; }
+</style>
+</head>
+<body>
+
+<header>GrabFood Clone</header>
+
+<div class="container">
+
+<h2>Restaurants</h2>
+<div class="card">Pizza House</div>
+<div class="card">Burger House</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Cart</h3>
+<p>Item Example</p>
+<p>Total: $10</p>
+<input placeholder="Address" />
+<button>Checkout (ABA / Stripe)</button>
+</div>
+
+<div class="card">
+<h3>Live Rider Tracking</h3>
+<div class="map">
+<div class="rider" id="rider"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+let x = 10;
+setInterval(()=>{
+  x += 5;
+  document.getElementById("rider").style.left = x + "px";
+},500);
+</script>
+
+</body>
+</html>
+*/
+
+
+/* ==============================
+   FEATURES
+   ============================== */
+
+// ✔ Full stack (Node + MongoDB)
+// ✔ Login/Register system
+// ✔ Restaurant API
+// ✔ Order system
+// ✔ GrabFood-style dark UI
+// ✔ Rider tracking animation
+// ✔ Payment placeholder (ABA / Stripe)
+
+/* ==============================
+   NEXT LEVEL UPGRADES
+   ============================== */
+

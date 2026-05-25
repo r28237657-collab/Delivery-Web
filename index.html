@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="card">
+            <h3><i class="fa-solid fa-phone"></i>081629928</h3>
+        </div>
+        <div class="card">
+            <h3>Get 10% Cashback | Shop Now</h3>
+        </div>
+        <div class="card">
+            <h3> <i class="fa-solid fa-globe"></i> English</h3>
+
+        </div>
+        <div class="card">
+            <h3> <i class="fa-solid fa-user"></i> My Account</h3>
+        </div>
+    </div>
+    <!-- container -->
+    <div class="container">
+            <div class="logo">
+                <h1><img src="image/logo/1.png" alt=""></h1>
+            </div>
+            <div class="menu-icon" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+                <ul class="menu" id="menu">
+                    <li>
+                        <a href=""><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-list"></i>Categories</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-phone"></i>Contact</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-info"></i>About</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-truck"></i>Delivery</a>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Search Product">
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-search"></i>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-user"></i>Account</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i>Cart</a>
+                    </li>
+                </ul>
+    </div>
+    <!-- banner -->
+    <div class="banner">
+        <img src="image/banner/1.png" alt="">
+    </div>
+    <!-- category -->
+    <div class="category">
+        <div class="card">
+            <img src="image/category/1.png" alt="">
+            <i class="fa-solid fa-laptop"></i>
+            <p>Electronics</p>
+        </div>
+        <div class="card">
+            <img src="image/category/3.png" alt="">
+            <i class="fa-solid fa-mobile"></i>
+            <p>Electronics</p>
+        </div>
+        <div class="card">
+            <img src="image/category/1.png" alt="">
+            <p>Electronics</p>
+        </div>
+        <div class="card">
+            <img src="image/product/3ce/1.png" alt="">
+        </div>
+        <div class="card">
+            <img src="image/product/hopen/1.png" alt="">
+        </div>
+        <div class="card">
+            <img src="image/product/iphone/1.png" alt="">
+        </div>
+        <div class="cart">
+            <img src="image/product/nike/1.png" alt="">
+        </div>
+    </div>
+    <script>
+        const menuIcon = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+
+        menuIcon.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

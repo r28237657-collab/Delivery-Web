@@ -1,0 +1,31 @@
+/*style text logo*/
+.logo{
+    background-color: gray;
+   
+}
+.home{
+    background-color: black;
+    color :white;
+}
+table{
+    width:90%;
+}
+td{
+    text-align: center;
+}
+img{
+    width: 150px;
+    height: 150px;
+
+}
+h3{
+    color: blue;
+}
+button{
+    background-color: red;
+    color: white;
+}
+p{
+    text-align: justify;
+    padding: 5px;
+}
